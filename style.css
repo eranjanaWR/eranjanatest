@@ -7,6 +7,30 @@ body {
     height: 100vh;
     background: #f0f0f0;
 }
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    80% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes winFlash {
+    0%, 100% {
+        background: #fff;
+    }
+    50% {
+        background: #b6ffb6;
+    }
+}
 h1 {
     margin-bottom: 20px;
     color: #333;
@@ -29,6 +53,11 @@ h1 {
     justify-content: center;
     cursor: pointer;
     transition: background 0.2s;
+    animation: popIn 0.3s;
+}
+
+.cell.win {
+    animation: winFlash 0.8s linear 2;
 }
 .cell:hover {
     background: #e0e0e0;
